@@ -8,6 +8,8 @@ A practical guide to running specialised Claude instances in parallel with struc
 
 > **If you adapt this for your work:** MIT-licensed, no permission needed. A link back to this repo when sharing your own version is appreciated — helps other solo builders discover the pattern. See [Credit + attribution](#credit--attribution) at the end for the full request.
 
+> **⚠️ Note for visitors curious to see the workflow's output:** the current `sabaifly.com` (pre-1 June 2026) shows the OLD placeholder — built BEFORE this workflow was formalised. The **new workflow-built site launches 1 June 2026** at the same URL. **The difference between them is night and day** — UX depth, feature completeness, content quality, architectural discipline. Don't judge the workflow by what's visible today. [Full honest disclosure below.](#honest-disclosure-about-sabaifly)
+
 ---
 
 ## The core insight
