@@ -1,0 +1,25 @@
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env files (never commit secrets)
+.env
+.env.local
+.env.*.local
+
+# Node (if examples ever add JS code)
+node_modules/
+
+# Local Claude state (skill development workspace)
+.claude/sessions/
+.claude/file-history/
+.claude/projects/
+.claude/backups/
+.claude/telemetry/
+.claude/mcp-needs-auth-cache.json
