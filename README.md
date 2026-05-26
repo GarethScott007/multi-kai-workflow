@@ -464,7 +464,7 @@ Before sharing your own version of this primer publicly:
 
 **SabaiFly is pre-launch as this primer is being published** — the new site launches 1st June 2026 at sabaifly.com, replacing the current placeholder site at that URL.
 
-**⚠️ Important:** if you visit sabaifly.com BEFORE 1st June 2026, you'll see the older site. That site was NOT built using the three-Kai workflow — it predates the workflow being formalised and was built using earlier (less disciplined) AI-assisted methods. Don't judge the workflow by that site; the workflow-built site launches 1st June 2026.
+**⚠️ Important:** if you visit sabaifly.com BEFORE 1st June 2026, you'll see the older site. That site was NOT built using the three-Kai workflow — it predates the workflow being formalised and was built using earlier (less disciplined) AI-assisted methods. **The difference between the old site and the new workflow-built site is night and day** — across UX depth, feature completeness, content quality, and architectural discipline. Don't judge the workflow by what's at sabaifly.com today; the workflow-built site launches 1st June 2026.
 
 The three-Kai workflow was developed DURING the new site's pre-launch build; it did NOT build the initial codebase from scratch (most of which predates the disciplined workflow being formalised).
 
