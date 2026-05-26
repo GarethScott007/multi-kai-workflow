@@ -6,6 +6,8 @@ A practical guide to running specialised Claude instances in parallel with struc
 
 **What this is NOT:** A replacement for understanding what you're building. The pattern works because you bring domain expertise + judgment; the Kais bring breadth + execution + memory.
 
+> **If you adapt this for your work:** MIT-licensed, no permission needed. A link back to this repo when sharing your own version is appreciated — helps other solo builders discover the pattern. See [Credit + attribution](#credit--attribution) at the end for the full request.
+
 ---
 
 ## The core insight
@@ -476,6 +478,21 @@ Before sharing your own version of this primer publicly:
 
 ---
 
+## Credit + attribution
+
+This workflow is **MIT-licensed** — you're free to use, adapt, and share without restriction. **What's requested but not required:**
+
+- **If you publicly share an adaptation** (blog post, video, your own repo, X/Twitter thread, conference talk) → a link back to `github.com/GarethScott007/three-kai-workflow` so other solo builders can find the original
+- **If you build something significantly different from the pattern** → name what you've added or changed so others can compare approaches across implementations
+- **If you adopt it in a paid product or commercial context** → same as above — link back so the pattern compounds across the ecosystem
+- **If it saved you meaningful time** → consider opening an issue or PR with what worked / didn't work / what you'd improve. The pattern improves through accumulated practice across many builders, not just one
+
+The point isn't enforcement — MIT means attribution can't be legally enforced and I don't want to enforce it anyway. The point is **cultural**: patterns spread better when each adaptation knows its origin, and other solo builders benefit from the cross-pollination across different implementations.
+
+If you've built something interesting with this pattern, I'd genuinely like to see it. Open an issue on this repo, or reach me at `hello@sabaifly.com` (SabaiFly is the product this pattern was developed building).
+
+---
+
 ## Final note
 
 The pattern only works because the human is the orchestrator. Each Kai is bounded; you bridge them. Your domain expertise, judgment, taste, and calibration radar are the load-bearing part — the Kais multiply your effective output but don't replace you.
@@ -483,4 +500,4 @@ The pattern only works because the human is the orchestrator. Each Kai is bounde
 If you find yourself doing less thinking, not more, something's wrong with how you're using the system. The whole point is to FREE your thinking from mechanical execution so you can apply it to the decisions that actually matter.
 
 — Gareth Scott + Kai (S-Kai mode, partnership across sessions)
-2026-05-25
+2026-05-25 (initial), 2026-05-26 (attribution section added)
