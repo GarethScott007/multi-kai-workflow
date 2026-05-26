@@ -1,6 +1,6 @@
 # Three-Kai Workflow — A Primer for Solo Builders Using Claude Code
 
-A practical guide to running specialised Claude instances in parallel with structured handoffs, encoded discipline, and durable memory. Developed by Gareth Scott over ~8 months building SabaiFly (a paramedic-credentialled travel-planning product, **launching 1st June 2026** at sabaifly.com); shared openly for any solo builder who wants to apply the pattern.
+A practical guide to running specialised Claude instances in parallel with structured handoffs, encoded discipline, and durable memory. Developed by Gareth Scott over ~8 months building SabaiFly (a paramedic-credentialled travel-planning product, **launching 1st June 2026** at sabaifly.com — replacing the current site, which predates this workflow); shared openly for any solo builder who wants to apply the pattern.
 
 **What you'll get from this:** ~5-10x throughput vs single-thread "AI helps me code" workflows, with quality guardrails that catch the failure modes solo builders typically miss.
 
@@ -462,7 +462,11 @@ Before sharing your own version of this primer publicly:
 
 ## Honest disclosure about SabaiFly
 
-**SabaiFly is pre-launch as this primer is being published** — launches 1st June 2026. The three-Kai workflow was developed DURING the pre-launch build; it did NOT build the initial site from scratch (most of the codebase predates the disciplined workflow being formalised).
+**SabaiFly is pre-launch as this primer is being published** — the new site launches 1st June 2026 at sabaifly.com, replacing the current placeholder site at that URL.
+
+**⚠️ Important:** if you visit sabaifly.com BEFORE 1st June 2026, you'll see the older site. That site was NOT built using the three-Kai workflow — it predates the workflow being formalised and was built using earlier (less disciplined) AI-assisted methods. Don't judge the workflow by that site; the workflow-built site launches 1st June 2026.
+
+The three-Kai workflow was developed DURING the new site's pre-launch build; it did NOT build the initial codebase from scratch (most of which predates the disciplined workflow being formalised).
 
 What the pattern HAS demonstrably done well during the pre-launch sprint:
 - Complex multi-week feature work (diary feature with MVP + photo upload + public sharing, shipped in ~3 days via parallel I-Kai sessions)
