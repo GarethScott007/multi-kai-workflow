@@ -1,6 +1,6 @@
 # Three-Kai Workflow — A Primer for Solo Builders Using Claude Code
 
-A practical guide to running specialised Claude instances in parallel with structured handoffs, encoded discipline, and durable memory. Developed by Gareth Scott over ~8 months building SabaiFly; shared with permission for any solo builder who wants to apply the pattern.
+A practical guide to running specialised Claude instances in parallel with structured handoffs, encoded discipline, and durable memory. Developed by Gareth Scott over ~8 months building SabaiFly (a paramedic-credentialled travel-planning product, **launching 1st June 2026** at sabaifly.com); shared openly for any solo builder who wants to apply the pattern.
 
 **What you'll get from this:** ~5-10x throughput vs single-thread "AI helps me code" workflows, with quality guardrails that catch the failure modes solo builders typically miss.
 
@@ -459,6 +459,26 @@ Before sharing your own version of this primer publicly:
 - **Discipline overhead.** The system rewards consistent capture; it punishes shortcuts. If you skip writing briefs and just chat with Claude, you lose the parallelism benefit.
 - **Learning curve.** Three weeks to feel comfortable. Three months to feel fluent. Six months for it to feel like second nature.
 - **Not magic.** AI still makes mistakes. The discipline catches more of them than no discipline does, but you remain the verifier-of-last-resort.
+
+## Honest disclosure about SabaiFly
+
+**SabaiFly is pre-launch as this primer is being published** — launches 1st June 2026. The three-Kai workflow was developed DURING the pre-launch build; it did NOT build the initial site from scratch (most of the codebase predates the disciplined workflow being formalised).
+
+What the pattern HAS demonstrably done well during the pre-launch sprint:
+- Complex multi-week feature work (diary feature with MVP + photo upload + public sharing, shipped in ~3 days via parallel I-Kai sessions)
+- Security audits catching real findings (Next.js HIGH CVEs caught + patched before launch)
+- Legal compliance text generation across multiple surfaces (privacy / ToS / refund / medical disclaimer) with proper jurisdiction-aware nuance
+- Brand-coherent decision-making across many parallel surfaces
+- Pre-launch sequencing under realistic time pressure (week-long sprint with multiple stakeholder dependencies)
+- Cross-session continuity (handoff docs + memory + skills surviving multi-day work cycles)
+
+What's NOT yet proven (will be validated post-launch):
+- Production runtime monitoring patterns
+- Long-term knowledge accumulation (memory base is months old, not years yet)
+- Multi-person team scaling (it's been solo + AI throughout)
+- Pattern stability across major Claude model upgrades
+
+If you adopt the pattern, you're adopting it on the basis of pre-launch development discipline. The post-launch validation comes later. That's the honest framing — useful tooling + proven during build, not yet battle-tested in production-at-scale operations.
 
 ---
 
