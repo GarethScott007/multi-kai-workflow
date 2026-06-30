@@ -12,6 +12,16 @@ A practical guide to running specialised Claude instances in parallel with struc
 
 ---
 
+## ⚡ What's new (2026-06) — the workflow evolved
+
+Two material upgrades since this primer was written:
+- **A fourth role — V-Kai, the adversarial verifier** — turned the workflow into a *verified pipeline*. All non-trivial work (including the briefs themselves) is now independently reviewed before it lands, because no author — human or AI — reviews their own work well.
+- **The durable memory matured into a "brain" that gets smarter over time** — owned, fully-local semantic recall plus a *capture → consolidate → apply* learning loop, so the same class of mistake doesn't get through twice.
+
+**→ [The Verifier and the Brain](THE-VERIFIER-AND-THE-BRAIN.md)** documents both, plus the full storage architecture (where every kind of work is persisted so nothing is lost). The role skills in [`skills/`](skills) are the current versions — including the new [`v-kai`](skills/v-kai/SKILL.md).
+
+---
+
 ## The core insight
 
 Most people use Claude as a single thread: one chat window, ask questions, get answers, lose context when the session ends. This works for small tasks but breaks down on real projects because:
