@@ -1,0 +1,19 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+
+# YOUR config names YOUR machine's directories -- keep it out of version control.
+# sources.example.json is the checked-in template; sources.json is yours.
+sources.json
+
+# Local index + model cache live under ~/.claude, never in the repo -- but ignore here too
+# in case anyone points persist_dir/cache_dir inside the project tree.
+index/
+fastembed-cache/
+*.npy
+*.onnx
