@@ -141,6 +141,10 @@ named in a document nobody is required to read is barely better.
 
 ## 3. The first week
 
+Five days, in this order, because each one assumes the last. The aim is not to have built much by
+Friday — it is to have gone round the loop **once**, end to end, so the habit exists before there is
+anything expensive to lose.
+
 ### Day 1 — write your `CLAUDE.md`
 
 Start here, before any pipeline work. It is the always-in-context file, so it is the cheapest place
