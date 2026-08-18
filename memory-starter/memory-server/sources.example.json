@@ -1,0 +1,49 @@
+{
+  "_comment": [
+    "Copy this file to sources.json (same directory) and edit it. sources.json is gitignored,",
+    "because it names YOUR machine's directories.",
+    "",
+    "RELATIVE paths resolve against THIS FILE's directory, not the process working directory --",
+    "an MCP server is launched from wherever the client feels like, so cwd is not dependable.",
+    "That is why the shipped example works from a fresh clone with no edits: it points at the",
+    "example vault one level up.",
+    "",
+    "ABSOLUTE paths and ~ are both fine. Add one entry per memory dir you want searchable.",
+    "'name' is what you pass as project= to scope a search; keep it short and typeable.",
+    "",
+    "Your real project vaults live at:",
+    "  ~/.claude/projects/<encoded-project-path>/memory",
+    "Ask Claude Code 'what is the absolute path to my memory directory?' inside that project, or",
+    "see docs/GETTING-STARTED.md. Your portable playbooks are worth indexing too -- give them the",
+    "name '_shared' so the craft-question search scope in ../conventions.md works as written."
+  ],
+
+  "sources": [
+    { "name": "example-vault", "path": "../vault" }
+  ],
+
+  "_sources_realistic_example": [
+    { "name": "my-app",  "path": "~/.claude/projects/<encoded-project-path>/memory" },
+    { "name": "_shared", "path": "~/.claude/memory-shared" }
+  ],
+
+  "excludes": [".git", ".obsidian", "node_modules", "*-backup-*", ".trash"],
+
+  "provider": "fastembed",
+
+  "_persist_dir_note": [
+    "persist_dir is the vector INDEX, and it is DERIVED FROM THIS CONFIG'S SOURCES. Two configs",
+    "must never share one -- whichever server boots last reconciles the index down to its own",
+    "sources and silently evicts the other's memories.",
+    "So the default here is LOCAL to this clone (gitignored), which is the safe choice while you",
+    "are trying the pack out alongside an existing install. Once this IS your install, moving it",
+    "to ~/.claude/sabai-memory/index keeps the repo clean -- just don't point two configs there.",
+    "",
+    "cache_dir is only the downloaded embedding MODEL (~90 MB). It is safe to share across",
+    "clones and machines-wide installs, so it stays under ~/.claude and you download it once."
+  ],
+  "persist_dir": "index",
+  "cache_dir": "~/.claude/sabai-memory/fastembed-cache",
+
+  "debounce_seconds": 2.0
+}

@@ -1,6 +1,6 @@
 # The Verifier and the Brain — the 2026-06 evolution
 
-*An update to the [Three-Kai Workflow](README.md). Two things changed the pattern materially: a **fourth role** (V-Kai, the adversarial verifier) turned the workflow into a **verified pipeline**, and the **durable memory matured into a "brain" that gets smarter over time.** This doc captures both, plus the full storage architecture — how every kind of work is persisted so nothing is ever lost.*
+*An update to the [Multi-Kai Workflow](README.md). Two things changed the pattern materially: a **fourth role** (V-Kai, the adversarial verifier) turned the workflow into a **verified pipeline**, and the **durable memory matured into a "brain" that gets smarter over time.** This doc captures both, plus the full storage architecture — how every kind of work is persisted so nothing is ever lost.*
 
 ---
 
@@ -13,7 +13,7 @@ The original pattern had a structural hole: **no author reviews their own work w
 
 **V-Kai closes both.** It is a dedicated, default-skeptical verifier whose only job is to *try to break the artifact in front of it*. It reviews the **brief** before the implementer builds, and the **build** before the planner merges. A review that concludes "looks good" everywhere is a failed review — V-Kai's value is the holes it finds.
 
-With V-Kai, the "three Kais" working a task are now **S-Kai (plan) → V-Kai (verify) → I-Kai (implement)**, with R-Kai (research) pulled in as needed. The human stays the principal: the escalation target and the only one who sets product direction.
+With V-Kai, the roles working a task are now **S-Kai (plan) → V-Kai (verify) → I-Kai (implement)**, with R-Kai (research) pulled in as needed. The human stays the principal: the escalation target and the only one who sets product direction.
 
 ### How V-Kai runs (the key mechanism)
 V-Kai is a **subagent with a fresh context**, dispatched from the planner's session. Fresh context = independent *by construction* — same independence a separate window gives, but cheaper, and (crucially) it actually works: a coding agent can't "wake" a separate idle session, but it *can* spawn a subagent and read its structured verdict back directly. The verdict is the subagent's return value. No second live session to coordinate, no cross-window relay. (For heavy, high-stakes reviews the same role can also be driven by hand in its own window — but the default is the cheap, automatic subagent.)
@@ -79,11 +79,11 @@ The same architecture, instantiated:
 - **Code** → the product repo on its integration trunk, pushed; every merge is an adversarially-verified "pillar."
 - **The brain** → the memory vault, backed off-machine to a private repo, recalled via the owned local server, viewed in Obsidian (where it's simply called *Brain*).
 - **Strategy + handoffs + build-status** → `docs/` in the repo.
-- **The workflow itself** → the three skills (which is what this repo mirrors).
+- **The workflow itself** → the three role skills — which this repo now ships directly in `skills/`, alongside the playbooks, templates, settings/hook and memory server they run on.
 - **Content** → an in-repo pipeline that composes on a flat-rate plan, runs it through ported quality gates, and **publishes to checked-in files** — so production renders from versioned files with zero runtime dependency on any external content database, and a published file is "clean by construction" (it exists only because it passed the gates).
 
 Nothing of value lives only in a chat window. That's the whole point: **the work compounds because it's stored, and the brain compounds because it learns.**
 
 ---
 
-*Part of the [Three-Kai Workflow](README.md). MIT-licensed — adapt freely; a link back is appreciated.*
+*Part of the [Multi-Kai Workflow](README.md). MIT-licensed — adapt freely; a link back is appreciated.*

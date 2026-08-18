@@ -1,0 +1,27 @@
+{
+  "_comment": [
+    "Preferred registration is the CLI, at USER scope, so recall spans every project:",
+    "  claude mcp add --scope user sabai-memory -- <abs path to venv python> -m sabai_memory",
+    "",
+    "This JSON is the equivalent block if you would rather edit config by hand. Note that a",
+    "user-scope registration made by the CLI does NOT live in this file or in any repo --",
+    "it lives in ~/.claude.json. That surprises people; see README.md, 'Two gotchas'.",
+    "",
+    "Replace <ABSOLUTE-PATH-TO-YOUR-CLONE> below. Use the venv's OWN python, never a bare",
+    "'python': the MCP client does not activate your virtualenv, so the interpreter path IS",
+    "the environment selection.",
+    "  Windows:      <clone>/memory-starter/memory-server/.venv/Scripts/python.exe",
+    "  macOS/Linux:  <clone>/memory-starter/memory-server/.venv/bin/python",
+    "",
+    "No env var is required if sources.json sits beside the sabai_memory package. Point",
+    "SABAI_MEMORY_CONFIG at a different file to override it."
+  ],
+  "mcpServers": {
+    "sabai-memory": {
+      "type": "stdio",
+      "command": "<ABSOLUTE-PATH-TO-YOUR-CLONE>/memory-starter/memory-server/.venv/Scripts/python.exe",
+      "args": ["-m", "sabai_memory"],
+      "env": {}
+    }
+  }
+}

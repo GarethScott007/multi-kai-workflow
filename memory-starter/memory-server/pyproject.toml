@@ -1,0 +1,31 @@
+[project]
+name = "sabai-memory"
+version = "0.1.0"
+description = "Owned, fully-local semantic memory recall (MCP server) over your Claude Code memory vault(s). No cloud, no third-party in the read path."
+requires-python = ">=3.11"
+dependencies = [
+    # UPPER BOUND IS LOAD-BEARING, not caution. mcp 2.0 removed `mcp.server.fastmcp`, which
+    # server.py imports — an unpinned install resolves to 2.x and the server cannot even
+    # import, let alone start. Caught 2026-08-18 by running the smoke test from a clean
+    # checkout; it passes on any venv created before the 2.0 release, which is exactly the
+    # kind of defect a developer's own machine cannot see.
+    # Owed: port server.py to the mcp 2.x server API, then raise this bound.
+    "mcp>=1.2.0,<2",
+    "fastembed>=0.4.0",
+    "numpy>=1.26",
+    "watchdog>=4.0",
+    "python-frontmatter>=1.1",
+]
+
+# Ollama is reached over its local HTTP API via stdlib urllib — no client dependency needed.
+# FastEmbed is the default and the tested provider; Ollama is optional.
+
+[project.scripts]
+sabai-memory = "sabai_memory.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["sabai_memory"]
