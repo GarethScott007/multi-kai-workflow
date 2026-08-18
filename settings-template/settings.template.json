@@ -1,0 +1,51 @@
+{
+  "$schema-note": "USER-SCOPE template -> copy to ~/.claude/settings.json (merge with what is already there; do not blindly overwrite). Read settings-template/README-SETTINGS.md first. This file deliberately ships NO blanket allow-list -- see the README's opt-in section.",
+  "permissions": {
+    "ask": [
+      "Bash(git push origin main*)",
+      "Bash(git push --force *)",
+      "Bash(git push -f *)",
+      "Bash(git push --force-with-lease *)",
+      "Bash(git reset --hard *)",
+      "Bash(git clean *)",
+      "Bash(git branch -D *)",
+      "Bash(git branch -d *)",
+      "Bash(git checkout -- *)",
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf C:*)",
+      "Bash(rm -rf ~*)",
+      "Bash(rm -fr /*)",
+      "Bash(rm -fr C:*)",
+      "Bash(rm -fr ~*)",
+      "PowerShell(git push origin main*)",
+      "PowerShell(git push --force *)",
+      "PowerShell(git push -f *)",
+      "PowerShell(git push --force-with-lease *)",
+      "PowerShell(git reset --hard *)",
+      "PowerShell(git clean *)",
+      "PowerShell(git branch -D *)",
+      "PowerShell(git branch -d *)",
+      "PowerShell(git checkout -- *)",
+      "PowerShell(Remove-Item C:*)",
+      "PowerShell(Remove-Item -Recurse C:*)",
+      "PowerShell(Remove-Item -Recurse -Force C:*)",
+      "Bash(<your db-mutating commands, e.g. the migrate/push/seed scripts>*)",
+      "PowerShell(<your db-mutating commands, e.g. the migrate/push/seed scripts>*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Workflow|Agent|Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"additionalContext\":\"DISPATCH PRE-FLIGHT (harness-enforced -- playbook_enforcement_ladder L4). Before proceeding past this launch, answer in one line each, in your visible response: (1) WRITES? does any agent in this launch write to a repo (docs and fixtures count; running a gate counts until proven write-free; a MUTATE-CONTROL -- break-then-restore -- counts as a WRITE)? (2) CONCURRENT? is any ALREADY-RUNNING task writing to the same tree -- enumerate your running background tasks; only the dispatcher can see both sides. (3) ISOLATION? if writes overlap: isolate (one worktree per writer) or serialise; sharing a tree requires a one-line written justification, and then every other writer waits or isolates. (4) WATCHER? if this launch starts a build whose completion must trigger a review, arm the completion watcher NOW, at dispatch. If this launch is read-only and nothing else is running, say exactly that in one line and continue.\"}}'",
+            "timeout": 10,
+            "statusMessage": "Dispatch pre-flight"
+          }
+        ]
+      }
+    ]
+  }
+}
